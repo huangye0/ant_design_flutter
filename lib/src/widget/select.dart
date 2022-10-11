@@ -135,6 +135,7 @@ class _SelectState extends State<Select> with SingleTickerProviderStateMixin {
     });
     textEditingController.addListener(() {
       widget.controller?.selected[0] = textEditingController.text;
+      widget.onChange?.call();
     });
     animatedController = AnimationController(
       vsync: this,
